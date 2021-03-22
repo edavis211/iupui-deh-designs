@@ -29,7 +29,6 @@ body {
 
 h2 {
   font-size: 3rem;
-  letter-spacing: 0.05rem;
   line-height: 3.2rem;
   margin-bottom: 0px;
   font-weight: 900;
@@ -99,16 +98,20 @@ body.front-page {
   fill: var(--text-default);
 }
 
+.navwrap {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .main-nav {
   padding: 15px 30px 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
   background-color: #fff;
-  z-index: 10;
   height: 80px;
+  position: relative;
 }
 
 .main-nav .right {
@@ -128,6 +131,12 @@ body.front-page {
 #search-button {
   width: 40px;
   margin-left: 30px;
+  transform: scale(1);
+  transition: all .3s ease-in-out;
+}
+
+#search-button:hover {
+  transform: scale(1.1);
 }
 
 .main-nav .right li a {
@@ -139,6 +148,46 @@ body.front-page {
 
 .main-nav .right li:hover a {
   color: var(--teal);
+}
+
+
+#navsearch {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  top: 0%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  border-top: 3px solid var(--teal);
+  z-index: -1;
+  opacity: 0;
+}
+
+#navsearch.active {
+  top: 100%;
+  opacity: 1;
+}
+
+#navsearch input {
+  height: 40px;
+  width: 400px;
+  padding: 3px 10px;
+  font-size: 1rem;
+  font-family: 'Arvo';
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  outline: none;
+}
+
+#search-button-action {
+  width: 50px;
+  margin-left: -20px;
+  cursor: pointer;
 }
 
 /* Header */
@@ -348,14 +397,9 @@ section.featured-items .subfeature p {
 .secondary-features .item .textwrap .btn {
   background-color: #fff;
   margin-top: 30px;
-  transform: scale(1);
   transition: all .3s ease-in-out;
   font-family: 'Arvo';
   font-weight: bold;
-}
-
-.secondary-features .item .textwrap .btn:hover {
-  transform: scale(1.02);
 }
 
 .secondary-features .item:nth-of-type(1) {
@@ -497,6 +541,7 @@ section.whatwedo h3 {
 }
 
 section.whatwedo .textwrap p {
+  font-family: 'Arvo';
   font-size: .9rem;
   padding: 0 30px 20px;
   max-width: 300px;
@@ -715,8 +760,8 @@ section.whatwedo .textwrap p {
 
 .opportunity h2 {
   margin: 0;
-  font-size: 2rem;
-  line-height: 2.2rem;
+  font-size: 3rem;
+  line-height: 3.2rem;
   font-family: 'Arvo';
 }
 
@@ -752,7 +797,6 @@ section.whatwedo .textwrap p {
 .opportunity .right article .time {
   font-size: 1.3rem;
   font-weight: bold;
-  text-transform: uppercase;
   text-align: center;
   color: var(--teal);
   font-family: 'Arvo';
@@ -777,6 +821,8 @@ section.whatwedo .textwrap p {
 
 .opportunity .right article h3 {
   font-weight: 600;
+  line-height: 2rem;
+  font-size: 1.5rem;
 }
 
 .opportunity .right article .excerpt {
@@ -798,9 +844,10 @@ section.whatwedo .textwrap p {
 }
 
 .opportunity .slide-control {
-  width: 70px;
+  width: 100px;
+  padding: 20px;
   position: absolute;
-  top: 40%;
+  top: 35%;
   z-index: 10;
   transition: all .3s ease-in-out;
   cursor: pointer;
@@ -811,21 +858,21 @@ section.whatwedo .textwrap p {
 }
 
 .opportunity #slide-prev {
-  left: 35px;
-  transform: rotate(180deg);
-
-}
-.opportunity #slide-next {
-  right: 35px;
-}
-
-.opportunity #slide-prev:hover {
   left: 25px;
   transform: rotate(180deg);
 
 }
+.opportunity #slide-next {
+  right: 55px;
+}
+
+.opportunity #slide-prev:hover {
+  left: 15px;
+  transform: rotate(180deg);
+
+}
 .opportunity #slide-next:hover {
-  right: 25px;
+  right: 45px;
 }
 
 

@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
 
-  $(".owl-carousel").owlCarousel({
+  var homeEventSlider = $(".owl-carousel").owlCarousel({
     loop: true,
     dotsEach: 1,
     items: 1,
@@ -23,5 +23,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     filter.addEventListener("click", function () {
       filter.classList.toggle("active");
     });
+  });
+
+  $("#slide-prev").on("click", function () {
+    homeEventSlider.trigger("prev.owl.carousel");
+  });
+  $("#slide-next").on("click", function () {
+    homeEventSlider.trigger("next.owl.carousel");
+  });
+
+  $("#search-button").on("click", function () {
+    $("#navsearch").toggleClass("active");
   });
 });
