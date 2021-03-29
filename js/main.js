@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   var rellax = new Rellax(".rellax");
 
+  /*
   document.getElementById("scrolldown").addEventListener("click", function () {
     var offset = 80; // sticky nav height
     var main = document.getElementById("front-page-main");
@@ -18,6 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       behavior: "smooth",
     });
   });
+  */
 
   document.querySelectorAll(".filter").forEach(function (filter) {
     filter.addEventListener("click", function () {
