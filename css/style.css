@@ -8,11 +8,36 @@
   --dkred: #97040b;
   --yellow: #e5bb17;
   --purple: #66445a;
+  --ltpurple: #993877;
   --dkpurple: #512b44;
   --text-default: #142c31;
   --gray: #79919e;
-
   --iu-red: #990000;
+}
+
+.gradient-teal {
+  background-color: var(--teal);
+  background: linear-gradient(var(--teal), var(--dkblue));
+}
+.gradient-orange {
+  background-color: var(--orange);
+  background: linear-gradient(var(--orange), var(--dkred));
+}
+.gradient-purple {
+  background-color: var(--purple);
+  background: linear-gradient(var(--ltpurple), var(--dkpurple));
+}
+.gradient-yellow {
+  background-color: var(--yellow);
+  background: linear-gradient(var(--yellow), var(--orange));
+}
+.gradient-red {
+  background-color: var(--red);
+  background: linear-gradient(var(--red), var(--dkpurple));
+}
+.gradient-blue {
+  background-color: var(--purple);
+  background: linear-gradient(var(--blue), var(--ltpurple));
 }
 
 * {
@@ -86,16 +111,17 @@ body.front-page {
 #navlogo-icon {
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
 #footerlogo-icon .center,
-#navlogo-icon .center {
+#navlogo-icon .a {
   fill: var(--teal);
   transition: all .3s ease-in-out;
 }
 
 #footerlogo-icon:hover .center,
-#navlogo-icon:hover .center {
+#navlogo-icon:hover .a {
   fill:var(--orange);
 }
 
@@ -241,11 +267,19 @@ body.front-page {
   width: 200px;
 }
 
+.front-page header .inner .left .textwrap p {
+  font-family: 'Arvo';
+  max-width: 400px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
 .front-page header .inner .right {
   width: 50%;
   flex-basis: 50%;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .front-page header .inner .right .img-gradient {
@@ -269,18 +303,24 @@ body.front-page {
 .front-page header .inner .right .img-gradient.circle1 {
   width: 400px;
   height: 400px;
-  transform: translate(-30px, -30px);
 }
 .front-page header .inner .right .img-gradient.circle2 {
   width: 200px;
   height: 200px;
-  transform: translate(30px, 30px);
+  /* transform: translate(30px, 30px); */
+  position: absolute;
+  left: -5vw;
+  top: -10vh;
   display: none;
 }
 .front-page header .inner .right .img-gradient.circle3 {
   width: 150px;
   height: 150px;
-  transform: translate(100px, 100px);
+  /* transform: translate(100px, 100px); */
+  position: absolute;
+  position: absolute;
+  left: -5vw;
+  top: -10vh;
   display: none;
 }
 
@@ -424,15 +464,22 @@ section.featured-items .subfeature p {
 }
 
 .secondary-features .item .imgwrap {
-  height: 300px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .secondary-features .item img {
-  max-height: 250px;
+  max-height: 100%;
+  transform: scale(1);
+  transition: all .3s ease-in-out;
 }
+
+.secondary-features .item:hover img {
+  transform: scale(1.1);
+}
+
 
 .secondary-features .item .textwrap {
   color: #fff;
@@ -452,6 +499,7 @@ section.featured-items .subfeature p {
 
 .secondary-features .item .textwrap p {
   margin-top: 0;
+  max-width: 300px;
 }
 
 .secondary-features .item .textwrap .btn {
@@ -464,15 +512,15 @@ section.featured-items .subfeature p {
 
 .secondary-features .item:nth-of-type(1) {
   background-color: var(--blue);
-  background: linear-gradient(180deg, var(--blue), var(--dkblue));
+  background: linear-gradient(var(--teal), var(--dkblue));
 }
 .secondary-features .item:nth-of-type(2) {
   background-color: var(--orange);
-  background: linear-gradient(180deg, var(--red), var(--dkred));
+  background: linear-gradient(var(--orange), var(--dkred));
 }
 .secondary-features .item:nth-of-type(3) {
   background-color: var(--purple);
-  background: linear-gradient(180deg, var(--purple), var(--dkpurple));
+  background: linear-gradient(180deg, var(--ltpurple), var(--dkpurple));
 }
 
 .secondary-features .item:nth-of-type(1) .btn{
@@ -524,60 +572,19 @@ section.whatwedo .sectionwrap .left {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 0;
+  flex-shrink: 1;
 }
 
 section.whatwedo .right {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 60px;
+  padding: 60px;
+  flex-grow: 0;
+  flex-shrink: 2;
 }
 
-section.whatwedo .icongrid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-section.whatwedo .iconblock {
-  padding: 15px 30px 0;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 140px;
-  width: 140px;
-  color: #fff;
-  transition: all .3s ease-in-out;
-}
-
-section.whatwedo .iconblock:hover {
-  /* box-shadow: 2px 2px 15px rgba(0,0,0,0.5); */
-}
-
-section.whatwedo .iconblock.block1 {transform: translateY(35px); background-color: var(--orange);}
-section.whatwedo .iconblock.block2 {transform: translateY(-35px); background-color: var(--teal);}
-section.whatwedo .iconblock.block3 {transform: translateY(35px);background-color: var(--red);}
-section.whatwedo .iconblock.block4 {transform: translateY(-35px); background-color: var(--blue);}
-section.whatwedo .iconblock.block5 {transform: translateY(35px); background-color: var(--yellow);}
-section.whatwedo .iconblock.block6 {transform: translateY(-35px); background-color: var(--purple);}
-
-section.whatwedo .iconblock img {
-  max-width: 60px;
-  transition: all .3s ease-in-out;
-  transform: scale(1);
-}
-
-section.whatwedo .iconblock:hover img {
-  /* transform: scale(1.07); */
-}
-
-section.whatwedo .iconblock p {
-  text-transform: uppercase;
-  font-size: .7rem;
-  line-height: .8rem;
-}
 
 section.whatwedo h2 {
   font-size: 3.5rem;
@@ -612,10 +619,120 @@ section.whatwedo .textwrap p {
   margin: 0 auto;
 }
 
+/* Who We Are */
+section.whoweare {
+  display: flex;
+}
+
+section.whoweare .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.whoweare .left {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-basis: 50%;
+  height: 100%;
+}
+
+section.whoweare .iconblock {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  position: relative;
+}
+
+section.whoweare .iconblock .imgwrap {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section.whoweare .iconblock .imgwrap:before {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+section.whoweare .iconblock:nth-of-type(1) .imgwrap:before {
+  background: linear-gradient(var(--teal), var(--dkblue));
+}
+section.whoweare .iconblock:nth-of-type(2) .imgwrap:before {
+  background: linear-gradient(var(--yellow), var(--dkred));
+}
+section.whoweare .iconblock:nth-of-type(3) .imgwrap:before {
+  background: linear-gradient(var(--blue), var(--ltpurple));
+}
+section.whoweare .iconblock:nth-of-type(4) .imgwrap:before {
+  background: linear-gradient(var(--red), var(--ltpurple));
+}
+section.whoweare .iconblock:nth-of-type(5) .imgwrap:before {
+  background: linear-gradient(var(--ltpurple), var(--teal));
+}
+section.whoweare .iconblock:nth-of-type(6) .imgwrap:before {
+  background: linear-gradient(var(--yellow), var(--orange));
+}
+
+
+section.whoweare .iconblock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0);
+}
+
+section.whoweare .iconblock .content {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+section.whoweare .iconblock p {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Arvo';
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+section.whoweare .right {
+  font-weight: 300;
+  flex-basis: 50%;
+  padding: 90px;
+}
+
+
+section.whoweare h2 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: var(--dkblue);
+  font-family: 'Arvo';
+  font-weight: bold;
+}
+
+section.whoweare .right p {
+  font-weight: 300;
+}
+
+
 /* Filters */
 
 .filters {
-  background: var(--blue);
+  background: linear-gradient(45deg, var(--blue), var(--teal));
   padding: 60px 15px;
 }
 
@@ -642,6 +759,7 @@ section.whatwedo .textwrap p {
   flex-shrink: 0;
   align-self: center;
   padding-bottom: 10px;
+  font-family: 'Arvo';
 }
 
 .filters .text-wrap p {
@@ -742,6 +860,7 @@ section.whatwedo .textwrap p {
   transform: scale(1);
   transition: all .3s ease-in-out;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .article-grid article:hover {
@@ -801,7 +920,9 @@ section.whatwedo .textwrap p {
 .opportunity {
   display: flex;
   background-color: #fcfcfc;
+  position: relative;
 }
+
 
 .opportunity>div {
   flex-basis: 50%;
@@ -822,10 +943,12 @@ section.whatwedo .textwrap p {
 }
 
 .opportunity h2 {
-  margin: 0;
-  font-size: 3rem;
-  line-height: 3.2rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-bottom: 30px;
+  color: var(--dkblue);
   font-family: 'Arvo';
+  font-weight: bold;
 }
 
 .opportunity .left .btn {
@@ -943,6 +1066,7 @@ section.whatwedo .textwrap p {
 
 .onboarding {
   background-color: var(--purple);
+  background: linear-gradient(45deg, var(--ltpurple), var(--orange));
 }
 
 .onboarding .inner>div {
@@ -952,9 +1076,8 @@ section.whatwedo .textwrap p {
 }
 
 .onboarding .inner {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .onboarding .inner .left {
@@ -964,6 +1087,7 @@ section.whatwedo .textwrap p {
   align-items: flex-start;
   padding: 30px;
   flex-basis: 50%;
+  order: 1;
 }
 
 .onboarding .inner .left .textwrap {
@@ -977,6 +1101,7 @@ section.whatwedo .textwrap p {
   margin-bottom: 0px;
   font-weight: 900;
   color: #fff;
+  font-family: 'Arvo';
 }
 
 .onboarding p {
@@ -987,14 +1112,14 @@ section.whatwedo .textwrap p {
 
 .onboarding a.btn {
   background-color: #fff;
-  color: var(--dkpurple);
+  color: var(--dkred);
   display: inline-block;
   width: fit-content;
   border-radius: 5px;
 }
 
 .onboarding a.btn svg path {
-  fill: var(--dkpurple);
+  fill: var(--dkred);
 }
 
 .onboarding .inner .right {
@@ -1002,6 +1127,7 @@ section.whatwedo .textwrap p {
   display: flex;
   align-items: center;
   justify-content: center;
+  order: 2;
 }
 
 .onboarding .inner .right .imgwrap {
@@ -1014,6 +1140,7 @@ section.whatwedo .textwrap p {
 
 .onboarding img {
   height: 400px;
+  transform: rotateY(180deg);
 }
 
 /* Footer */
