@@ -178,7 +178,8 @@ body.front-page {
   font-family: 'Arvo';
 }
 
-.main-nav .right li:hover a {
+.main-nav .right li:hover a,
+.main-nav .right li.active a {
   color: var(--teal);
 }
 
@@ -248,6 +249,9 @@ body.front-page {
   gap: 5vw;
   padding: 5vw;
   background: transparent;
+  background-image: url('../img/transparent-nodes.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid rgba(0,0,0,0.02);
   box-shadow: -1px -1px 5px rgba(255,255,255,0.5);
   border-radius: 10px;
@@ -732,6 +736,9 @@ section.whoweare .right p {
 /* Filters */
 
 .filters {
+background-attachment: fixed;
+  background-size: 140%;
+  background-repeat: no-repeat;
   background: linear-gradient(45deg, var(--blue), var(--teal));
   padding: 60px 15px;
 }
@@ -1067,6 +1074,20 @@ section.whoweare .right p {
 .onboarding {
   background-color: var(--purple);
   background: linear-gradient(45deg, var(--ltpurple), var(--orange));
+  position: relative;
+  mix-blend-mode: multiply;
+  margin-top: 150px;
+}
+
+.onboarding img.bkgrd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: saturate(0);
 }
 
 .onboarding .inner>div {
@@ -1077,14 +1098,14 @@ section.whoweare .right p {
 
 .onboarding .inner {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .onboarding .inner .left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
   padding: 30px;
   flex-basis: 50%;
   order: 1;
@@ -1126,20 +1147,19 @@ section.whoweare .right p {
   flex-basis: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
   order: 2;
 }
 
 .onboarding .inner .right .imgwrap {
   width: 600px;
-  height: 600px;
+  height: 450px;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .onboarding img {
-  height: 400px;
+  height: 550px;
   transform: rotateY(180deg);
 }
 
@@ -1216,6 +1236,11 @@ footer .upper .links li>a {
 footer .upper .links li:hover>a {
   color: var(--teal);
 }
+
+footer .upper .links li.active a {
+  color: var(--teal);
+}
+
 
 
 footer .upper .mainlinks {
