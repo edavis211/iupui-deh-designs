@@ -58,11 +58,26 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-size: 4.5rem;
+  line-height: 5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--dkblue);
+  font-family: 'Arvo';
+}
+
 h2 {
-  font-size: 3rem;
-  line-height: 3.2rem;
-  margin-bottom: 0px;
-  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--dkblue);
+  font-family: 'Arvo';
+}
+
+p {
+  font-size: 18px;
 }
 
 a {
@@ -1183,6 +1198,7 @@ footer .upper .logowrap {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 60px;
+  width: 400px;
 }
 
 #footerlogo-icon {
@@ -1215,6 +1231,8 @@ footer .upper .right {
 footer .upper .links {
   display: flex;
   justify-content: flex-end;
+  gap: 60px;
+  align-items: center;
 }
 
 footer .upper .links ul {
@@ -1241,8 +1259,6 @@ footer .upper .links li.active a {
   color: var(--teal);
 }
 
-
-
 footer .upper .mainlinks {
   font-weight: 400;
   font-size: 1.1rem;
@@ -1251,12 +1267,33 @@ footer .upper .mainlinks {
 
 footer .upper .links.small-links li>a {
   font-size: .9em;
+  text-transform: uppercase;
+}
+
+footer .subscribewrap form {
+  display: flex;
+}
+
+footer .subscribewrap img {
+  transform: rotateY(180deg);
 }
 
 
+footer #email-join {
+  font-size: 16px;
+  padding: 5px 10px 5px 30px;
+  border-radius: 5px;
+  height: 45px;
+  border: 1px solid #ed6326;
+  width: 250px;
+  transform: translateX(-5px) translateY(2px);
+  z-index: -1;
+  box-sizing: border-box;
+}
+
 /* IU Footer */
 footer .lower {
-  padding: 15px;
+  padding: 15px 30px;
   background-color: var(--iu-red);
   display: flex;
   justify-content: space-between;
@@ -1279,6 +1316,10 @@ footer .lower .textwrap {
   font-size: .8rem;
   max-width: 500px;
 
+}
+footer .lower .textwrap p {
+  color: #fff;
+  font-size: .8rem;
 }
 
 footer .lower .right {
@@ -1311,4 +1352,13 @@ footer .lower .right li a {
 
 footer .lower .right li:hover a {
   text-decoration: underline;
+}
+
+/* About Page */
+.page-about header {
+  padding: 90px 10vw 0;
+  flex-direction: column;
+  font-family: 'Arvo';
+  color: var(--dkblue);
+  font-size: 36px;
 }
