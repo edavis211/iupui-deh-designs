@@ -102,7 +102,7 @@
         <ul>
           <li><a href="#">Teacher Engagement</a></li>
           <li><a href="#">Community Engagement</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="/about.html">About</a></li>
         </ul>
         <div id="search-button">
           <img src="./img/icons/searchIcon.svg" alt="Search Button">
@@ -461,7 +461,7 @@
       </div>
       <div class="right">
         <div class="inner">
-          <div class="owl-carousel">
+          <div class="owl-carousel owl-theme">
             <article class="slide">
               <div class="time">
                 1pm - June 1st, 2021
@@ -626,6 +626,43 @@
 
     </div>
   </footer>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+
+      var homeEventSlider = $(".owl-carousel").owlCarousel({
+        loop: true,
+        dotsEach: 1,
+        items: 1,
+      });
+
+      /*
+      document.getElementById("scrolldown").addEventListener("click", function () {
+        var offset = 80; // sticky nav height
+        var main = document.getElementById("front-page-main");
+        window.scroll({
+          top: main.offsetTop - offset,
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+      */
+
+      document.querySelectorAll(".filter").forEach(function (filter) {
+        filter.addEventListener("click", function () {
+          filter.classList.toggle("active");
+        });
+      });
+
+      $("#slide-prev").on("click", function () {
+        homeEventSlider.trigger("prev.owl.carousel");
+      });
+      $("#slide-next").on("click", function () {
+        homeEventSlider.trigger("next.owl.carousel");
+      });
+    });
+  </script>
+
 </body>
 
 </html>
