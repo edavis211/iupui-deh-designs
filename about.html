@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
     crossorigin="anonymous" />
+
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
@@ -34,7 +35,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"
     integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
     crossorigin="anonymous"></script>
-
 
   <script src="./js/main.js"></script>
 
@@ -141,11 +141,11 @@
     </section>
 
     <section class="approach">
-      <h2>Our Approach</h2>
+      <h2 class="">Our Approach</h2>
 
       <div class="iconblock">
 
-        <div class="card">
+        <div class="card ">
           <div class="iconwrap">
             <img src="./img/education-icons/smart-ideas.svg" alt="" width="150">
           </div>
@@ -156,9 +156,9 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card ">
           <div class="iconwrap">
-            <img src="./img/education-icons/new-ideas.svg" alt="" width="150">
+            <img src="./img/education-icons/elearning.svg" alt="" width="150">
           </div>
           <div class="textwrap">
             <h3>Offer Options</h3>
@@ -167,9 +167,9 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card ">
           <div class="iconwrap">
-            <img src="./img/illustrations/collaboration.svg" alt="" width="150">
+            <img src="./img/education-icons/new-ideas.svg" alt="" width="150">
           </div>
           <div class="textwrap">
             <h3>Ensure that students and their communities are reflected in the learning environment</h3>
@@ -179,10 +179,9 @@
         </div>
 
 
-
-        <div class="card">
+        <div class="card ">
           <div class="iconwrap">
-            <img src="./img/education-icons/new-ideas.svg" alt="" width="150">
+            <img src="./img/education-icons/online-education.svg" alt="" width="150">
           </div>
           <div class="textwrap">
             <h3>Address the Barriers</h3>
@@ -193,9 +192,9 @@
 
 
 
-        <div class="card">
+        <div class="card ">
           <div class="iconwrap">
-            <img src="./img/education-icons/smart-ideas.svg" alt="" width="150">
+            <img src="./img/education-icons/online-teaching.svg" alt="" width="150">
           </div>
           <div class="textwrap">
             <h3>Collaborate to be agents of change</h3>
@@ -204,15 +203,16 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-credits">
           <div class="iconwrap">
             <img src="./img/illustrations/puzzle.svg" alt="" width="500">
           </div>
           <div class="textwrap">
             <div class="textblock">
-              <p>The ideas are based on <strong>Universal Design for Learning</strong> (David Rose and Anne Meyer) and
-                <strong>Culturally Relevant
-                  Pedagogy</strong> (Gloria Ladson Billings). These big ideas are woven through everything we do.</p>
+              <p>The ideas are based on <a href="#">Universal Design for Learning</a> (David Rose and Anne Meyer) and
+                <a href="#">Culturally Relevant
+                  Pedagogy</a> (Gloria Ladson Billings).</p>
+              <h4>These big ideas are woven through everything we do.</h4>
             </div>
           </div>
         </div>
@@ -387,6 +387,7 @@
 
   <script>
     window.addEventListener("DOMContentLoaded", (event) => {
+      createObserver();
 
       var slider = $(".owl-carousel").owlCarousel({
         loop: true,
@@ -400,7 +401,36 @@
       $("#slide-next").on("click", function () {
         slider.trigger("next.owl.carousel");
       });
+
     });
+
+    function createObserver() {
+      let options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1,
+      };
+
+      let observer = new IntersectionObserver(handleIntersect, options);
+
+      document.querySelectorAll(".iconblock>.card").forEach(function (target) {
+        observer.observe(target);
+      });
+
+    }
+
+    function handleIntersect(entries, observer) {
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll(".iconblock>.card").forEach(function (target) {
+            target.classList.remove("active");
+          });
+
+          entry.target.classList.add("active");
+        }
+      });
+    }
   </script>
 
 </body>
