@@ -264,7 +264,7 @@ body.front-page {
   flex-direction: row;
   gap: 5vw;
   justify-content: space-between;
-
+  max-width: 1200px;
 }
 
 .front-page header .inner .upper {
@@ -287,7 +287,6 @@ body.front-page {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  background: rgba(255,255,255,0.7);
   padding: 90px 30px;
 
 }
