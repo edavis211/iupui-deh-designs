@@ -311,7 +311,7 @@ body.front-page {
 }
 
 
-.iconblock {
+.front-page .iconblock {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -325,7 +325,7 @@ body.front-page {
   position: relative;
 }
 
-.iconblock .imgwrap {
+.front-page .iconblock .imgwrap {
   position: absolute;
   top:0;
   left: 0;
@@ -333,7 +333,7 @@ body.front-page {
   height: 100%;
 }
 
-.iconblock .imgwrap:before {
+.front-page .iconblock .imgwrap:before {
   content: '';
   position: absolute;
   top:0;
@@ -365,14 +365,14 @@ body.front-page {
 }
 
 
-.iconblock img {
+.front-page .iconblock img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(0);
 }
 
-.iconblock .content {
+.front-page .iconblock .content {
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -380,7 +380,7 @@ body.front-page {
   flex-direction: column;
 }
 
-.iconblock h2 {
+.front-page .iconblock h2 {
   color: #fff;
   font-size: 18px;
   line-height: 26px;
@@ -394,15 +394,15 @@ body.front-page {
 }
 
 
-.iconblock:hover {
+.front-page .iconblock:hover {
   min-height: 300px;
 }
 
-.iconblock:hover h2 {
+.front-page .iconblock:hover h2 {
   opacity: 0;
 }
 
-.iconblock p {
+.front-page .iconblock p {
   color: #fff;
   position: absolute;
   right: -100%;
@@ -411,7 +411,7 @@ body.front-page {
   transition: all .3s ease-in-out;
 }
 
-.iconblock:hover p {
+.front-page .iconblock:hover p {
   right: 0
 }
 
