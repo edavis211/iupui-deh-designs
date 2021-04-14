@@ -125,6 +125,29 @@ a.btn svg path {
   background: var(--orange);
 }
 
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .inner {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  padding: 5vw;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.banner h1 {
+  color: #fff;
+  font-size: 60px;
+  line-height: 66px;
+  max-width: 700px;
+}
+
 
 body.front-page {
   display: flex;
@@ -1914,4 +1937,265 @@ footer .lower .right li:hover a {
 
 #about-page-main .colorblock:hover .content a {
   transform: scale(1.1);
+}
+
+
+/* community-engagement */
+
+.community-engagement h2 {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.community-engagement .overview {
+  max-width: 800px;
+  margin: auto;
+  padding: 60px 30px 90px;
+}
+
+.community-engagement .overview p {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.community-engagement .tutorials {
+  background-image: url(../img/nodes-gradient-bkgrd.jpg);
+  background-size: cover;
+  padding: 60px 30px;
+}
+
+.community-engagement .tutorials>p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.community-engagement .tutorials .carousel-wrap {
+  padding: 60px 60px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.community-engagement .tutorials article {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  margin: 15px 0;
+}
+
+.community-engagement .tutorials article .imgwrap {
+  height: 250px;
+  position: relative;
+}
+
+.community-engagement .tutorials article .imgwrap img {
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.community-engagement .tutorials article .textwrap {
+  padding: 15px 30px 30px;
+}
+
+.community-engagement .tutorials article .label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5px;
+}
+
+.community-engagement .tutorials article h3 {
+  font-family: "Arvo";
+  color: var(--dkblue);
+}
+
+
+.community-engagement .tutorials .slide-control {
+  width: 90px;
+  padding: 20px;
+  position: absolute;
+  top: 30%;
+  z-index: 10;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.community-engagement .tutorials .slide-control svg path {
+  fill: var(--orange);
+}
+
+.community-engagement .tutorials #slide-prev {
+  left: 10px;
+  transform: rotate(180deg);
+
+}
+.community-engagement .tutorials #slide-next {
+  right: 10px;
+}
+
+.community-engagement .tutorials #slide-prev:hover {
+  left: 0px;
+  transform: rotate(180deg);
+
+}
+.community-engagement .tutorials #slide-next:hover {
+  right: 0px;
+}
+
+.community-engagement .tutorials .btn {
+  margin: auto;
+  display: block;
+}
+
+.community-engagement .caucus {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 30px;
+}
+
+.community-engagement .caucus h2 {
+  font-size: 36px;
+}
+
+.community-engagement .bios {
+  background-color: var(--purple);
+  width: 100%;
+  padding: 60px 30px;
+}
+
+.community-engagement .bios h2 {
+  font-size: 36px;
+  color: #fff;
+}
+
+.community-engagement .bios-wrap {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 90px;
+  padding: 30px;
+  background-color: var(--purple);
+}
+
+.community-engagement .bios .left {
+  flex-basis: 250px;
+  flex-shrink: 0;
+}
+
+.community-engagement .bios .left ul {
+  max-height: 100%;
+  padding: 0;
+  background-color: var(--dkpurple);
+  margin-top: 0px;
+}
+
+.community-engagement .bios .left li {
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 10px 15px;
+}
+
+.community-engagement .bios .left li.active {
+  background-color: #fff;
+  color: var(--purple);
+  font-weight: 500;
+  padding: 20px 15px;
+}
+
+.community-engagement .bios .right .inner {
+  position: relative;
+}
+
+.community-engagement .bios article {
+  display: none;
+  background-color: rgba(255,255,255,0.8);
+  padding: 90px 60px 30px;
+}
+
+.community-engagement .bios article.active {
+  display: block;
+}
+
+.community-engagement .bios article h3 {
+  color: var(--dkpurple);
+  font-size: 28px;
+  font-family: 'Arvo';
+  max-width: 360px;
+  margin-bottom: 15px;
+}
+
+.community-engagement .bios article h4 {  
+  font-size: 14px;
+  max-width: 360px;
+  margin-bottom: 70px;
+}
+
+.community-engagement .bios .imgwrap {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  right: 30px;
+  top: -60px;
+}
+
+.community-engagement .bios .imgwrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.community-engagement .contact {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.community-engagement .contact .inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.community-engagement .contact .text-wrap {
+  background-color: rgba(255,255,255,0.65);
+  text-align: left;
+  min-height: 400px;
+  max-width: 450px;
+  padding: 60px;
+  backdrop-filter: blur(10px);
+}
+
+.community-engagement .contact h3 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: var(--teal);
+  font-family: 'Arvo';
+}
+
+.community-engagement .contact .btn {
+  background-color: var(--teal);
 }
